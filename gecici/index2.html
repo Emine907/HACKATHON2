@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş Ekranı</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+
+    <!-- Açılır ekran -->
+    <div class="baslangic" id="baslangic">
+        <div class="baslangic-content">
+            <h1>OYUNA HOSGELDINIZ!!!</h1>
+    <h1>Baslamak için butona tıklayınız.</h1>
+            <button id="startButton">Başla</button>
+          
+        </div>
+    </div>
+
+    <script>
+        // Başla butonuna tıklanınca popup kapanacak ve başka sayfaya yönlendirilecek
+        document.getElementById("startButton").onclick = function() {
+            var baslangic = document.getElementById("baslangic");
+            baslangic.style.display = "none";
+
+            // 0.5 saniye sonra başka HTML sayfasına geç
+            setTimeout(function() {
+                window.location.href = "http://127.0.0.1:5500/index.html"; // açılacak yeni sayfa
+            }, 500);
+        };
+    </script>
+
+</body>
+</html>
