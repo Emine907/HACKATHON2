@@ -8,14 +8,18 @@
 <body>
     <h1>Oyuna Hoşgeldiniz!!!</h1>
     <h1>Başlamak için butona tıklayınız.</h1>
-    <button onclick="alert('BAŞLA')">Başla</button>
+    <button onclick=>Başla</button>
     <div class="Aciklama">
         <h2>Yıl 2100...</h2>
         <h2>Bir keşif için uzaya gönderildin. Araştırma gemin x ile yola çıkıyorsun.</h2>
         <h2>Şu anki görevin yaşam olabileceği söylenen o gezegene ulaşmak.</h2>
         
         <script>
-         alert('O da ne!!! Meteorlar bize doğru yaklaşıyor!')
+            function basla() {
+                setTimeout(function() {
+                alert('O da ne!!! Meteorlar bize doğru yaklaşıyor!');
+                }, 3000); // 3 saniye bekleyip alert çıkar
+            }
         </script>
 
         <h2>Hemen bir karar vermelisin!</h2>
