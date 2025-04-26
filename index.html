@@ -40,13 +40,14 @@
     </style>
 </head>
 <body>
+    
 
     <div id="aciklama" style="display: none;">
         <h2>Yıl 2100...</h2>
         <h2>Bir keşif için uzaya gönderildin. Araştırma gemin x ile yola çıkıyorsun.</h2>
         <h2>Şu anki görevin yaşam olabileceği söylenen o gezegene ulaşmak.</h2>
     </div>
-
+   
     <!-- Buraya yeni kayan yazı -->
     <div id="meteorYazisi">O da ne!!! Meteorlar bize doğru yaklaşıyor!</div>
 
@@ -70,81 +71,11 @@
 
     <div id="sonuc" style="display: none;"></div>
 
-<script>
-    function basla() {
-        document.getElementById("aciklama").style.display = "block"; // Önce açıklamayı göster
-
-        setTimeout(function() {
-            // 3 saniye sonra meteor yazısını göster
-            document.getElementById("meteorYazisi").style.display = "block";
-
-            // Meteor yazısı geldikten 2 saniye sonra seçim ekranı açılsın
-            setTimeout(function() {
-                document.getElementById("secim1").style.display = "block";
-            }, 2000);
-
-        }, 3000); // 3 saniye açıklamadan sonra
-    }
-
-    window.onload = function() {
-        basla();
-    };
-
-    function solaGit() {
-        document.getElementById("secim1").style.display = "none";
-        document.getElementById("solYolu").style.display = "block";
-    }
-
-    function sagaGit() {
-        document.getElementById("secim1").style.display = "none";
-        document.getElementById("sagYolu").style.display = "block";
-    }
-
-    function sistemiYenile() {
-        document.getElementById("solYolu").style.display = "none";
-        document.getElementById("sonuc").style.display = "block";
-        document.getElementById("sonuc").innerHTML = `
-            <h3>Sistemleri onardın!</h3>
-            <h2>Tebrikler oyunu kazandın!</h2>
-            <button onclick="yenidenBasla()">Yeniden Başla</button>
-        `;
-    }
-
-    function umursamadanDevamEt() {
-        document.getElementById("solYolu").style.display = "none";
-        document.getElementById("sonuc").style.display = "block";
-        document.getElementById("sonuc").innerHTML = `
-            <h3>Umursamadan ilerliyorsun...</h3>
-            <h2>Oyunu kaybettin!</h2>
-            <button onclick="yenidenBasla()">Yeniden Başla</button>
-        `;
-    }
-
-    function komutaninDediğiniYap() {
-        document.getElementById("sagYolu").style.display = "none";
-        document.getElementById("sonuc").style.display = "block";
-        document.getElementById("sonuc").innerHTML = `
-            <h3>Komutanın dediği yolda yakıt bitti!</h3>
-            <h2>Oyunu kaybettin!</h2>
-            <button onclick="yenidenBasla()">Yeniden Başla</button>
-        `;
-    }
-
-    function sinyaleDogruGit() {
-        document.getElementById("sagYolu").style.display = "none";
-        document.getElementById("sonuc").style.display = "block";
-        document.getElementById("sonuc").innerHTML = `
-            <h3>Sinyale doğru ilerliyorsun!</h3>
-            <h2>Keşfetmen gereken gezegen karşında!</h2>
-            <h2>Oyunu kazandın! Tebrikler!</h2>
-            <button onclick="yenidenBasla()">Yeniden Başla</button>
-        `;
-    }
-
-    function yenidenBasla() {
-        location.reload();
-    }
-</script>
-
+    <script src="./script.js"></script>
+    
+<img src="roket.webp" alt="" class="img" > 
+<div class="meteor"></div>
+<div class="meteor2"></div>
 </body>
+
 </html>

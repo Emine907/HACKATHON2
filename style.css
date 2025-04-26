@@ -1,3 +1,9 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -10,11 +16,16 @@ body {
   }
   
   h1, h2, h3, p {
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    margin-bottom: 5px;
+    margin-top: 20px; 
+    margin-left:16px;
+    color:aliceblue;
+    text-shadow: 2px 2px 4px rgba(248, 245, 245, 0.7);
   }
   
   button {
     margin: 10px;
+    margin-top:100px;
     padding: 12px 24px;
     font-size: 18px;
     background-color: #0d6efd;
@@ -31,12 +42,59 @@ body {
   }
   
   .Aciklama, .sola_gittiğimizde, .saga_gittiğimizde {
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(223, 232, 224, 0.6);
     padding: 20px;
     margin: 20px;
     border-radius: 15px;
+    
   }
   
   #kutu {
     margin-top: 20px;
+  }
+  .img {
+    width: 250px;
+    height: auto;
+    position: fixed; /* Resmi sabitle */
+    bottom: 100px;     /* Sayfanın en altından 20px yukarıda */
+    right: 600px;      /* Sağdan 20px içeride */
+    z-index: 999;     /* Her şeyin üstünde olsun */
+  }
+  .meteor {
+    display:none;
+    position: fixed;
+    top: -100px;
+    left: 50%;
+    width: 4px;
+    height: 80px;
+    background: linear-gradient(red, transparent);
+    transform: rotate(45deg);
+    animation: meteorAnim 2s linear infinite;
+    z-index: 1000;
+  }
+  
+  .meteor2 {
+    display:none;
+    position: fixed;
+    top: -100px;
+    left: 50%;
+    width: 4px;
+    height: 80px;
+    background: linear-gradient(orange, transparent);
+    transform: rotate(45deg);
+    animation: meteorAnim 1s linear infinite;
+    z-index: 1000;
+  }
+
+  @keyframes meteorAnim {
+    0% {
+      top: -100px;
+      left: 80%;
+      opacity: 1;
+    }
+    100% {
+      top: 100vh;
+      left: 30%;
+      opacity: 0;
+    }
   }
