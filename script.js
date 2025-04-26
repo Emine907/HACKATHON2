@@ -16,7 +16,7 @@ function basla() {
                     ? "meteorAnim 1s linear infinite" 
                     : "meteorAnim 2s linear infinite";
             });
-        }, 500); // Meteor yazısından 0.5 saniye sonra meteorlar başlasın
+        }, 1000); // Meteor yazısından 0.5 saniye sonra meteorlar başlasın
 
         // Meteor yazısından 2 saniye sonra seçim ekranı açılsın
         setTimeout(function() {
@@ -31,6 +31,8 @@ window.onload = function() {
 };
 
 function solaGit() {
+    document.getElementById("aciklama").style.display = "none"; // Önce açıklamayı gizle
+    document.getElementById("meteorYazisi").style.display = "none"; // meteor yazısını gizle
     document.getElementById("secim1").style.display = "none";
     document.getElementById("solYolu").style.display = "block";
 }
