@@ -1,0 +1,107 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url('./arkaplanresmi.png');
+    background-size: cover;
+    font-family: 'Orbitron', sans-serif;
+    overflow-x: auto; /* Sağ-Sola kaymaya izin ver */
+    overflow-y: hidden; /* Aşağı-Yukarı kaymaya izin verme */    
+  }
+  
+  h1, h2, h3, p {
+    margin-bottom: 5px;
+    margin-top: 20px; 
+    margin-left:16px;
+    color:aliceblue;
+    text-shadow: 2px 2px 4px rgba(248, 245, 245, 0.7);
+  }
+  
+  button {
+    margin: 10px;
+    margin-top:100px;
+    padding: 12px 40px;
+    font-size: 18px;
+    background-color:#81D4FA;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-left:70px;      /* Sola boşluk bırak */
+    margin-right: 0;  
+  }
+  
+  button:hover {
+    background-color: #0b5ed7;
+    transform: scale(1.05);
+  }
+  
+  .Aciklama, .sola_gittiğimizde, .saga_gittiğimizde {
+    background: rgba(223, 232, 224, 0.6);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 15px;
+    
+  }
+  
+  #kutu {
+    margin-top: 20px;
+  }
+  .img {
+    width: 150px;
+    height: auto;
+    position: fixed; /* Resmi sabitle */
+    bottom: 200px;     /* Sayfanın en altından 20px yukarıda */
+    right: 650px;      /* Sağdan 20px içeride */
+    z-index: 999;     /* Her şeyin üstünde olsun */
+  }
+  .meteor {
+    display:none;
+    position: fixed;
+    top: -100px;
+    left: 50%;
+    width: 4px;
+    height: 80px;
+    background: linear-gradient(red, transparent);
+    transform: rotate(45deg);
+    animation: meteorAnim 2s linear infinite;
+    z-index: 1000;
+  }
+  
+  .meteor2 {
+    display:none;
+    position: fixed;
+    top: -100px;
+    left: 50%;
+    width: 4px;
+    height: 80px;
+    background: linear-gradient(orange, transparent);
+    transform: rotate(45deg);
+    animation: meteorAnim 1s linear infinite;
+    z-index: 1000;
+  }
+
+  @keyframes meteorAnim {
+    0% {
+      top: -100px;
+      left: 80%;
+      opacity: 1;
+    }
+    100% {
+      top: 100vh;
+      left: 30%;
+      opacity: 0;
+    }
+  }
+
+  @keyframes solaUcus {
+    from { transform: translateX(0); }
+    to { transform: translateX(-300px); }
+}
