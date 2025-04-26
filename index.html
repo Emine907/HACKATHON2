@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gezegen Keşfi</title>
+</head>
+<body>
+    <h1>Oyuna Hoşgeldiniz!!!</h1>
+    <h1>Başlamak için butona tıklayınız.</h1>
+    <button onclick="alert('BAŞLA')">Başla</button>
+    <div class="Aciklama">
+        <h2>Yıl 2100...</h2>
+        <h2>Bir keşif için uzaya gönderildin. Araştırma gemin x ile yola çıkıyorsun.</h2>
+        <h2>Şu anki görevin yaşam olabileceği söylenen o gezegene ulaşmak.</h2>
+        
+        <script>
+         alert('O da ne!!! Meteorlar bize doğru yaklaşıyor!')
+        </script>
+
+        <h2>Hemen bir karar vermelisin!</h2>
+        <button onclick="solaGit()">Sol</button>
+        <button onclick="sagaGİt()">Sağ</button>
+
+
+        <div id="kutu"></div>
+
+        <script>
+            function solaGit(){
+                var kutu = document.getElementById("kutu");
+                var mevcutKonum = parseInt(window.getComputedStyle(kutu).left);
+                kutu.style.left = (mevcutKonum - 20) + "px";
+            }
+
+            function sagaGit(){
+                var kutu = document.getElementById("kutu");
+                var mevcutKonum = parseInt(window.getComputedStyle(kutu).left);
+                kutu.style.left = (mevcutKonum + 20) + "px";
+            }
+
+        </script>
+    </div>
+    
+
+    <div class="sola_gittiğimizde">
+        <h2>Olamaz! Meteorlar bize çarptı! Gemi sistemimiz zarar gördü ve iletişimimiz kesildi.</h2>
+        <h2>Artık kararları kendin vermelisin.</h2>
+
+        <button onclick="sistemiYenile()">sistemiYenile</button>
+        <button onclick="umursamadanDevamEt()">umursamadanDevamEt</button>
+
+
+        <div id="kutu"></div>
+
+        <script>
+            function sistemiYenile(){
+                var kutu = document.getElementById("kutu");
+                kutu.innerHTML = `
+                <h3>Sistemleri onarmaya çalışıyorsun...</h3>
+                <p>Ancak zaman daralıyor! Dışarıdan gelen sinyaller seni tedirgin ediyor.</p> 
+                <h2>Sinyale doğru ilerliyorsun ve işte keşfetmen gereken gezegen orada!</h2>
+                <h2>Tebrikler oyunu kazandın!</h2>`;
+            }
+
+            function umursamadanDevamEt(){
+                var kutu = document.getElementById("kutu");
+                kutu.innerHTML = `
+                kutu.style.left = (mevcutKonum - 20) + "px";
+                <h3>Umursamadan ilerliyorsun!</h3>
+                <p>Gemindeki arıza iyice büyüdü ve gemin yanmaya başladı.</p> 
+                <h2> Oyunu kaybettin!</h2>
+                <h2>Tekrardan oynamak için butona tıklayınız.</h2>
+                <button onclick="yenidenBasla()">Yeniden Başla</button> `;
+            }
+
+            function yenidenBasla() {
+            location.reload();  // Sayfayı yeniden yükler, oyun sıfırdan başlar.
+            }
+
+        </script>
+    </div>
+
+
+    <div class="saga_gittiğimizde">
+        <h2>Meteorlardan kurtuldun. Tebrikler.</h2>
+        <h2>Yakınlardan bir sinyal geliyor. Ama komutan sana farklı yönde gitmeni söyledi.</h2>
+        
+        <button onclick="komutanınDediğiniYap()">komutanın Dediği Yönde Git</button>
+        <button onclick="sinyaleDoğruGit()">Sinyale Doğru Git</button>
+
+
+        <div id="kutu"></div>
+
+        <script>
+            function komutanınDediğiniYap(){
+                var kutu = document.getElementById("kutu");
+                kutu.innerHTML = `
+                <h3>Komutanın dediği yönde ilerliyorsun.</h3>
+                kutu.style.left = (mevcutKonum + 20) + "px";
+                <p>Yakıtın çok az kaldı ve iniş yapabileceğin bir yer yok.</p> 
+                <h2>Oyunu kaybettin!</h2> 
+                <h2>Tekrardan oynamak için butona tıklayınız.</h2>
+                <button onclick="yenidenBasla()">Yeniden Başla</button> `;
+            }
+
+            function sinyaleDoğruGit(){
+                var kutu = document.getElementById("kutu");
+                kutu.innerHTML = `
+                <h3>Sinyalin geldiği yönde ilerliyorsun!</h3>
+                kutu.style.left = (mevcutKonum - 20) + "px";
+                <p>İşte keşfetmek istediğin o gezegen karşında!</p> 
+                <h2> Oyunu kazandın! Tebrikler!</h2> `;
+            }
+
+            function yenidenBasla() {
+            location.reload();  // Sayfayı yeniden yükler, oyun sıfırdan başlar.
+            }
+
+        </script>
+    </div>
+
+
+
+</body>
+</html>
