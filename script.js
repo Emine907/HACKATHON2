@@ -35,11 +35,23 @@ function solaGit() {
     document.getElementById("meteorYazisi").style.display = "none"; // meteor yazısını gizle
     document.getElementById("secim1").style.display = "none";
     document.getElementById("solYolu").style.display = "block";
+    let gemi = document.getElementById("uzayGemisi");
+    gemi.style.transition = "transform 2s linear"; // Hareketin süresi ve tipi
+    gemi.style.transform = "translateX(-200px)"; // Sola 200px kaydır
+    gemi.style.animation = "solaUcus 2s forwards";
+
 }
 
 function sagaGit() {
+    document.getElementById("aciklama").style.display = "none"; // Önce açıklamayı gizle
+    document.getElementById("meteorYazisi").style.display = "none"; // meteor yazısını gizle
     document.getElementById("secim1").style.display = "none";
     document.getElementById("sagYolu").style.display = "block";
+    document.getElementById("solYolu").style.display = "block";
+    let gemi = document.getElementById("uzayGemisi");
+    gemi.style.transition = "transform 2s linear"; // Hareketin süresi ve tipi
+    gemi.style.transform = "translateX(200px)"; // Sağa 200px kaydır
+    gemi.style.animation = "sagaUcus 2s forwards";
 }
 
 function sistemiYenile() {

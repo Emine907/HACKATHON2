@@ -11,8 +11,8 @@ body {
     background-image: url('./arkaplanresmi.png');
     background-size: cover;
     font-family: 'Orbitron', sans-serif;
-    
-    
+    overflow-x: auto; /* Sağ-Sola kaymaya izin ver */
+    overflow-y: hidden; /* Aşağı-Yukarı kaymaya izin verme */    
   }
   
   h1, h2, h3, p {
@@ -55,11 +55,11 @@ body {
     margin-top: 20px;
   }
   .img {
-    width: 250px;
+    width: 150px;
     height: auto;
     position: fixed; /* Resmi sabitle */
-    bottom: 100px;     /* Sayfanın en altından 20px yukarıda */
-    right: 600px;      /* Sağdan 20px içeride */
+    bottom: 200px;     /* Sayfanın en altından 20px yukarıda */
+    right: 650px;      /* Sağdan 20px içeride */
     z-index: 999;     /* Her şeyin üstünde olsun */
   }
   .meteor {
@@ -100,3 +100,8 @@ body {
       opacity: 0;
     }
   }
+
+  @keyframes solaUcus {
+    from { transform: translateX(0); }
+    to { transform: translateX(-300px); }
+}
