@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Sarı Gezegen ve Bayrak</title>
+  <script src="./gezegen.js"></script>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: #000;
+    }
+    #container {
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <div id="container"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script>
+    // Scene ve nesneleri hazırla
+    window.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('container');
+      
+      // Scene, camera, renderer
+      const scene = new THREE.Scene();
+      scene.background = new THREE.Color(0x000000);
+      const camera = new THREE.PerspectiveCamera(
+        75,
+        container.clientWidth / container.clientHeight,
+        0.1,
+        1000
+      );
+      camera.position.set(0, 1.5, 5);
+      
+      const renderer = new THREE.WebGLRenderer({ antialias: true });
+      renderer.setSize(container.clientWidth, container.clientHeight);
+      container.appendChild(renderer.domElement);
+      
+      // Lights
+      scene.add(new THREE.AmbientLight(0xffffff, 0.6));
+      const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
+      dirLight.position.set(5, 10, 7);
+      scene.add(dirLight);
+      
+      // Planet (yellow)
+      const planetGeo = new THREE.SphereGeometry(1, 64, 64);
+      const planetMat = new THREE.MeshPhongMaterial({ color: 0xE5E500, shininess: 60 });
+      const planet = new THREE.Mesh(planetGeo, planetMat);
+      scene.add(planet);
+      
+      // Flag pole
+      const poleGeo = new THREE.CylinderGeometry(0.02, 0.02, 1.4, 8);
+      const poleMat = new THREE.MeshPhongMaterial({ color: 0x888888 });
+      const pole = new THREE.Mesh(poleGeo, poleMat);
+      pole.position.set(0, 0.5, 0);
+      pole.translateZ(1.01);
+      planet.add(pole);
+      
+      // Flag with image
+      const flagGeo = new THREE.PlaneGeometry(1, 0.6);
+      const textureLoader = new THREE.TextureLoader();
+      
+      // Bayrak resminizin URL'sini buraya ekleyin
+      const flagImageUrl = 'siber_sembolü.jpg'; // Bu dosyayı HTML ile aynı klasörde olmalı
+      
+      textureLoader.load(
+        flagImageUrl, // Resim URL'si
+        function(texture) {
+          // Resim başarıyla yüklendi
+          const flagMat = new THREE.MeshBasicMaterial({ 
+            map: texture, 
+            side: THREE.DoubleSide, 
+            transparent: true 
+          });
+          
+          const flag = new THREE.Mesh(flagGeo, flagMat);
+          flag.position.set(0, 1.2, 0);
+          flag.translateZ(1.01);
+          planet.add(flag);
+        },
+        undefined, // Yükleme ilerleme callback'i
+        function(error) {
+          console.error('Bayrak resmi yüklenemedi:', error);
+        }
+      );
+      
+      // Mouse interaction
+      let isDragging = false;
+      let previousMousePosition = {
+        x: 0,
+        y: 0
+      };
+      
+      document.addEventListener('mousedown', (e) => {
+        isDragging = true;
+      });
+      
+      document.addEventListener('mousemove', (e) => {
+        const deltaMove = {
+          x: e.clientX - previousMousePosition.x,
+          y: e.clientY - previousMousePosition.y
+        };
+        
+        if(isDragging) {
+          const deltaRotationQuaternion = new THREE.Quaternion()
+            .setFromEuler(new THREE.Euler(
+              toRadians(deltaMove.y * 0.5),
+              toRadians(deltaMove.x * 0.5),
+              0,
+              'XYZ'
+            ));
+          
+          planet.quaternion.multiplyQuaternions(deltaRotationQuaternion, planet.quaternion);
+        }
+        
+        previousMousePosition = {
+          x: e.clientX,
+          y: e.clientY
+        };
+      });
+      
+      document.addEventListener('mouseup', (e) => {
+        isDragging = false;
+      });
+      
+      function toRadians(angle) {
+        return angle * (Math.PI / 180);
+      }
+      
+      // Handle resize
+      window.addEventListener('resize', () => {
+        camera.aspect = container.clientWidth / container.clientHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(container.clientWidth, container.clientHeight);
+      });
+      
+      // Animation loop
+      function animate() {
+        requestAnimationFrame(animate);
+        if (!isDragging) {
+          planet.rotation.y += 0.005;
+        }
+        renderer.render(scene, camera);
+      }
+      
+      animate();
+    });
+  </script>
+</body>
+</html>
