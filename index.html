@@ -100,9 +100,7 @@
     </div>
 
     <div id="sistemiYenile_div" style="display: none;">
-        <h2>Sistemi yeniledin ve hızlandın.Gemiden bir sinyal geliyor!:</h2>
-        <button onclick="sinyaleGit1()">Sinyale Git</button>
-        <button onclick="yolundanSasma()">Yolundan Şaşma</button>
+        
     </div>
 
     <div id="umursamadanDevamEt_div" style="display: none;">
@@ -117,7 +115,7 @@
         <button onclick="savas2()">savaş</button>
     </div>
 
-    <div id="yolundanSasma-div" style="display: none;">
+    <div id="yolundanSasma_div" style="display: none;">
         <h2>Yolundan şaşmamayı seçtin.Kendinden eminsin ha.\n Rotan üstünde bir güneş patlaması bekleniyor. </h2>
         <button onclick="kalkan()">Kalkan sistemlerini aktive et (enerji harcar ama korur)</button>
         <button onclick="yoldegis()">Yolu değiştir (daha uzun ve yakıt harcatan bir rota)</button>
@@ -127,9 +125,9 @@
 
     <div id="sagYolu_div" style="display: none;">
         <h2>Meteorlardan kurtuldun. Tebrikler!</h2>
+        <h2>Uzaklardan bir sinyal alıyorsun. Ama komutanın sana başka bir yönde gitmen gerektiğini söylüyor.</h2>
         <button onclick="komutaninDediğiniYap()">Komutanın Dediği Yönde Git</button>
-       
-        <button onclick="sinyalegit2()">Sinyale Doğru Git</button>
+        <button onclick="sinyalegit2()">Sinyale Doğru Git</button>l
     </div>
 
 
@@ -149,13 +147,17 @@
 
     <div id="sonuc" style="display: none;"></div>
 
+
     <script src="./script.js"></script>
-    
-<img id="img" src="roket.webp">
+
+<img id="img" src="roket.webp" style="position: absolute; transition: transform 2s linear;">
+
 <div class="meteor"></div>
 <div class="meteor2"></div>
 <!-- sayfa2.html içinde -->
-<iframe src="gezegen.html" width="300" height="300"></iframe>
+<iframe src="gezegen.html"  width="400" height="400"></iframe>
+
+
 </body>
 
 

@@ -55,11 +55,12 @@ body {
     margin-top: 20px;
   }
   #img {
-    width: 80px;
-    height: 30px;
+    width: 300px;
+    height: auto;
     position: fixed;
-    bottom: 20px;
-    right: 50px;
+    transform: translate(0px, 0px);  
+    bottom: 25px;
+    right: 550px;
     z-index: 999;
   }
   .meteor {
@@ -88,6 +89,7 @@ body {
     z-index: 1000;
   }
 
+
   @keyframes meteorAnim {
     0% {
       top: -100px;
@@ -103,5 +105,26 @@ body {
 
   @keyframes solaUcus {
     from { transform: translateX(0); }
-    to { transform: translateX(-300px); }
+    to { transform: translateX(-200px); }
+
+    
 }
+
+@keyframes sagaaUcus {
+  from { transform: translateX(0); }
+  to { transform: translateX(200px); }
+
+  
+}
+
+@keyframes solYukarıUcus {
+  0% {
+      transform: translate(0, 0); /* Başlangıçta başlangıç noktasında */
+  }
+  100% {
+      transform: translate(-700px, -200px); /* Hedef pozisyon */
+  }
+}
+
+
+
