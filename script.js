@@ -34,7 +34,7 @@ function solaGit() {
     document.getElementById("aciklama").style.display = "none"; // Önce açıklamayı gizle
     document.getElementById("meteorYazisi").style.display = "none"; // meteor yazısını gizle
     document.getElementById("secim1").style.display = "none";
-    document.getElementById("solYolu").style.display = "block";
+    document.getElementById("solYolu_div").style.display = "block";
     let gemi = document.getElementById("uzayGemisi");
     gemi.style.transition = "transform 2s linear"; // Hareketin süresi ve tipi
     gemi.style.transform = "translateX(-200px)"; // Sola 200px kaydır
@@ -46,8 +46,8 @@ function sagaGit() {
     document.getElementById("aciklama").style.display = "none"; // Önce açıklamayı gizle
     document.getElementById("meteorYazisi").style.display = "none"; // meteor yazısını gizle
     document.getElementById("secim1").style.display = "none";
-    document.getElementById("sagYolu").style.display = "block";
-    document.getElementById("solYolu").style.display = "block";
+    document.getElementById("sagYolu_div").style.display = "block";
+    document.getElementById("solYolu_div").style.display = "block";
     let gemi = document.getElementById("uzayGemisi");
     gemi.style.transition = "transform 2s linear"; // Hareketin süresi ve tipi
     gemi.style.transform = "translateX(200px)"; // Sağa 200px kaydır
@@ -55,7 +55,7 @@ function sagaGit() {
 }
 
 function sistemiYenile() {
-    document.getElementById("solYolu").style.display = "none";
+    document.getElementById("solYolu_div").style.display = "none";
     document.getElementById("sonuc").style.display = "block";
     document.getElementById("sonuc").innerHTML = `
         <h3>Sistemi yeniledin ve hızlandın.Gemiden bir sinyal geliyor!</h3>
@@ -65,7 +65,7 @@ function sistemiYenile() {
 }
 
 function umursamadanDevamEt() {
-    document.getElementById("solYolu").style.display = "none";
+    document.getElementById("solYolu_div").style.display = "none";
     document.getElementById("sonuc").style.display = "block";
     document.getElementById("sonuc").innerHTML = `
         <h3>Umursamadan ilerliyorsun...</h3>
@@ -77,16 +77,18 @@ function umursamadanDevamEt() {
 
 function sinyaleGit1(){
     document.getElementById("sonuc").style.display = "none";
-    document.getElementById("Sinyale gittin ve tehlikeyle karşılaştın. Bu bölge uzaylıların kontrolünde üstüne geliyorlar!") = "block";
-    document.getElementById("Sinyale gittin ve tehlikeyle karşılaştın. Bu bölge uzaylıların kontrolünde üstüne geliyorlar!").innerHTML = `
+    document.getElementById("sinyaleGit1_div") = "block";
+    document.getElementById("sinyaleGit1_div").innerHTML = `
+    <h2> Sinyale gittin ve tehlikeyle karşılaştın. Bu bölge uzaylıların kontrolünde üstüne geliyorlar! </h2>
     <button onclick="barisimzala2()">Barış İmzala</button>
     <button onclick="savas2()">Savaş</button> `;
 }
 
-function sinyaleGit1(){
-    document.getElementById("sSinyale gittin ve tehlikeyle karşılaştın. Bu bölge uzaylıların kontrolünde üstüne geliyorlar!").style.display = "none";
-    document.getElementById("Yolundan şaşmamayı seçtin.Kendinden eminsin ha.\n Rotan üstünde bir güneş patlaması bekleniyor.") = "block";
-    document.getElementById("Yolundan şaşmamayı seçtin.Kendinden eminsin ha.\n Rotan üstünde bir güneş patlaması bekleniyor.").innerHTML = `
+function yolundanSasma(){
+    document.getElementById("sonuc").style.display = "none";
+    document.getElementById("yolundanSasma_div") = "block";
+    document.getElementById("yolundanSasma_div").innerHTML = `
+    <h2> Yolundan şaşmamayı seçtin.Kendinden eminsin ha.\n Rotan üstünde bir güneş patlaması bekleniyor. </h2>
     <button onclick="kalkan()">Kalkan sistemlerini aktive et (enerji harcar ama korur)</button>
     <button onclick="yoldegis()">Yolu değiştir (daha uzun ve yakıt harcatan bir rota)</button> `;
 }
@@ -95,7 +97,7 @@ function sinyaleGit1(){
 
 
 function komutaninDediğiniYap() {
-    document.getElementById("sagYolu").style.display = "none";
+    document.getElementById("sagYolu_div").style.display = "none";
     document.getElementById("sonuc").style.display = "block";
     document.getElementById("sonuc").innerHTML = `
         <h3>Komutanı dinledin ve daha uzak olan gezegen için yola devam ettin\n böylece yakıtın azaldı\n şimdi ne yapacaksın?</h3>
@@ -105,7 +107,7 @@ function komutaninDediğiniYap() {
 }
 
 function sinyalegit2() {
-    document.getElementById("sagYolu").style.display = "none";
+    document.getElementById("sagYolu_div").style.display = "none";
     document.getElementById("sonuc").style.display = "block";
     document.getElementById("sonuc").innerHTML = `
         <h3>Sinyale doğru ilerliyorsun!</h3>
@@ -115,10 +117,10 @@ function sinyalegit2() {
     `;
 }
 
-function sinyalegit2() {
+function onlaraKatil() {
     document.getElementById("sonuc").style.display = "none";
-    document.getElementById("Onlara katil").style.display = "block";
-    document.getElementById("Onlara katil").innerHTML = `
+    document.getElementById("onlaraKatil_div").style.display = "block";
+    document.getElementById("onlaraKatil_div").innerHTML = `
         <h3>Onlarla beraber ilerliyorsun.</h3>
         <h2>Ama yolundan saptın ve gezegenin yolunu kaybettin. Oyun bitti!</h2>
         <h2>Kaybettiniz!!!</h2>
@@ -126,10 +128,10 @@ function sinyalegit2() {
     `;
 }
 
-function sinyalegit2() {
+function kendiYolundan() {
     document.getElementById("sonuc").style.display = "none";
-    document.getElementById("Kendi yolundan ilerle").style.display = "block";
-    document.getElementById("Kendi yolundan ilerle").innerHTML = `
+    document.getElementById("kendiYolundan_div").style.display = "block";
+    document.getElementById("kendiYolundan_div").innerHTML = `
         <h3>Kendi yolundan ilerliyorsun.</h3>
         <h2>Yakıtın bitti.</h2>
         <h2>Oyunu kaybettiniz!!!</h2>

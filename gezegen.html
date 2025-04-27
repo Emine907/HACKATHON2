@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>3D Sarı Gezegen ve Bayrak</title>
+  <!--
   <script src="./gezegen.js"></script>
+  -->
   <style>
     body {
       margin: 0;
@@ -46,27 +48,29 @@
       const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
       dirLight.position.set(5, 10, 7);
       scene.add(dirLight);
-      
+    
+
+
       // Planet (yellow)
       const planetGeo = new THREE.SphereGeometry(1, 64, 64);
-      const planetMat = new THREE.MeshPhongMaterial({ color: 0xE5E500, shininess: 60 });
+      const planetMat = new THREE.MeshPhongMaterial({ color: 0xE5E500,  shininess: 60 });
       const planet = new THREE.Mesh(planetGeo, planetMat);
       scene.add(planet);
       
       // Flag pole
-      const poleGeo = new THREE.CylinderGeometry(0.02, 0.02, 1.4, 8);
+      const poleGeo = new THREE.CylinderGeometry(0.02, 0.02, 2.0, 8);
       const poleMat = new THREE.MeshPhongMaterial({ color: 0x888888 });
       const pole = new THREE.Mesh(poleGeo, poleMat);
-      pole.position.set(0, 0.5, 0);
+      pole.position.set(0, 2, -1);
       pole.translateZ(1.01);
       planet.add(pole);
       
       // Flag with image
-      const flagGeo = new THREE.PlaneGeometry(1, 0.6);
+      const flagGeo = new THREE.PlaneGeometry(1, 1);
       const textureLoader = new THREE.TextureLoader();
       
       // Bayrak resminizin URL'sini buraya ekleyin
-      const flagImageUrl = 'siber_sembolü.jpg'; // Bu dosyayı HTML ile aynı klasörde olmalı
+      const flagImageUrl = '5796145352380893529.jpg'; // Bu dosyayı HTML ile aynı klasörde olmalı
       
       textureLoader.load(
         flagImageUrl, // Resim URL'si
@@ -79,7 +83,7 @@
           });
           
           const flag = new THREE.Mesh(flagGeo, flagMat);
-          flag.position.set(0, 1.2, 0);
+          flag.position.set(0.5, 2.5, -1);
           flag.translateZ(1.01);
           planet.add(flag);
         },

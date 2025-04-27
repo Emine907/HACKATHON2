@@ -93,31 +93,31 @@
     </div>
 
 
-    <div id="solYolu" style="display: none;">
+    <div id="solYolu_div" style="display: none;">
         <h2>Olamaz! Meteorlar bize çarptı!</h2>
         <button onclick="sistemiYenile()">Sistemleri Yenile</button>
         <button onclick="umursamadanDevamEt()">Umursamadan Devam Et</button>
     </div>
 
-    <div id="sistemiYenile" style="display: none;">
+    <div id="sistemiYenile_div" style="display: none;">
         <h2>Sistemi yeniledin ve hızlandın.Gemiden bir sinyal geliyor!:</h2>
         <button onclick="sinyaleGit1()">Sinyale Git</button>
         <button onclick="yolundanSasma()">Yolundan Şaşma</button>
     </div>
 
-    <div id="umursamadanDevamEt" style="display: none;">
+    <div id="umursamadanDevamEt_div" style="display: none;">
         <h2>Umursamadın ve gemi yavaş gitmeye başladı.O da ne?:</h2>
         <button onclick="barisimzala()">barış imzala</button>
         <button onclick="savas()">savaş</button>
     </div>
 
-    <div id="sinyaleGit1" style="display: none;">
+    <div id="sinyaleGit1_div" style="display: none;">
         <h2>Sinyale gittin ve Tehlikeyle karşılaştın.Bu bölge uzaylıların kontrolünde.Üstüne geliyorlar!:</h2>
         <button onclick="barisimzala2()">barış imzala</button>
         <button onclick="savas2()">savaş</button>
     </div>
 
-    <div id="yolundanSasma" style="display: none;">
+    <div id="yolundanSasma-div" style="display: none;">
         <h2>Yolundan şaşmamayı seçtin.Kendinden eminsin ha.\n Rotan üstünde bir güneş patlaması bekleniyor. </h2>
         <button onclick="kalkan()">Kalkan sistemlerini aktive et (enerji harcar ama korur)</button>
         <button onclick="yoldegis()">Yolu değiştir (daha uzun ve yakıt harcatan bir rota)</button>
@@ -125,7 +125,7 @@
 
 
 
-    <div id="sagYolu" style="display: none;">
+    <div id="sagYolu_div" style="display: none;">
         <h2>Meteorlardan kurtuldun. Tebrikler!</h2>
         <button onclick="komutaninDediğiniYap()">Komutanın Dediği Yönde Git</button>
        
@@ -133,36 +133,25 @@
     </div>
 
 
-    <div id="komutaninDediğiniYap" style="display: none;">
+    <div id="komutaninDediğiniYap_div" style="display: none;">
         <h2>Komutanı dinledin ve daha uzak olan gezegen için yola devam ettin\n böylece yakıtın azaldı\n şimdi ne yapacaksın?</h2>
         <button onclick="enyakingezegen()">en yakın gezegene in </button>
         <button onclick="gemiyizorla()">gemiyi zorla</button>
     </div>
 
-    <div id="sinyalegit2" style="display: none;">
+    <div id="sinyalegit2_div" style="display: none;">
         <h2>sinyale doğru ilerliyorsun.Aaa burada başka bir keşif ekibi daha var!</h2>
         <button onclick="onlaraKatil()">Onlara katıl</button>
         <button onclick="KendiYolundan()">Kendi yolundan git</button>
     </div>
 
-   
 
-
-
-
-
-
-    <div id="kirmiziyagit" style="display: none;">
-        <h2>Kırmızıya iniş yaparken uzay gemisini sert indirdin ve arıza uyarısı aldın! </h2>
-        <button onclick="tamiret()">uzay gemini tamir et</button>
-        <button onclick="gezegenein2()">arızayı umursama ve kırmızı gezegeni keşfet</button>
-    </div>
 
     <div id="sonuc" style="display: none;"></div>
 
     <script src="./script.js"></script>
     
-<img id="uzayGemisi" src="roket.webp">
+<img id="img" src="roket.webp">
 <div class="meteor"></div>
 <div class="meteor2"></div>
 <!-- sayfa2.html içinde -->
