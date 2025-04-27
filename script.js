@@ -58,9 +58,9 @@ function sistemiYenile() {
     document.getElementById("solYolu").style.display = "none";
     document.getElementById("sonuc").style.display = "block";
     document.getElementById("sonuc").innerHTML = `
-        <h3>Sistemleri onardın!</h3>
-        <h2>Tebrikler oyunu kazandın!</h2>
-        <button onclick="yenidenBasla()">Yeniden Başla</button>
+        <h3>Sistemi yeniledin ve hızlandın.Gemiden bir sinyal geliyor!</h3>
+        <button onclick="sinyaleGit1()">Sinyale Git</button>
+        <button onclick="yolundanSasma()">Yolundan şaşma</button>
     `;
 }
 
@@ -69,32 +69,76 @@ function umursamadanDevamEt() {
     document.getElementById("sonuc").style.display = "block";
     document.getElementById("sonuc").innerHTML = `
         <h3>Umursamadan ilerliyorsun...</h3>
-        <h2>Oyunu kaybettin!</h2>
-        <button onclick="yenidenBasla()">Yeniden Başla</button>
+        <h2>Karşına uzaylılar çıktı!</h2>
+        <button onclick="barisimzala()">Barış İmzala</button>
+        <button onclick="savas()">Savaş</button>
     `;
 }
+
+function sinyaleGit1(){
+    document.getElementById("sonuc").style.display = "none";
+    document.getElementById("Sinyale gittin ve tehlikeyle karşılaştın. Bu bölge uzaylıların kontrolünde üstüne geliyorlar!") = "block";
+    document.getElementById("Sinyale gittin ve tehlikeyle karşılaştın. Bu bölge uzaylıların kontrolünde üstüne geliyorlar!").innerHTML = `
+    <button onclick="barisimzala2()">Barış İmzala</button>
+    <button onclick="savas2()">Savaş</button> `;
+}
+
+function sinyaleGit1(){
+    document.getElementById("sSinyale gittin ve tehlikeyle karşılaştın. Bu bölge uzaylıların kontrolünde üstüne geliyorlar!").style.display = "none";
+    document.getElementById("Yolundan şaşmamayı seçtin.Kendinden eminsin ha.\n Rotan üstünde bir güneş patlaması bekleniyor.") = "block";
+    document.getElementById("Yolundan şaşmamayı seçtin.Kendinden eminsin ha.\n Rotan üstünde bir güneş patlaması bekleniyor.").innerHTML = `
+    <button onclick="kalkan()">Kalkan sistemlerini aktive et (enerji harcar ama korur)</button>
+    <button onclick="yoldegis()">Yolu değiştir (daha uzun ve yakıt harcatan bir rota)</button> `;
+}
+
+
+
 
 function komutaninDediğiniYap() {
     document.getElementById("sagYolu").style.display = "none";
     document.getElementById("sonuc").style.display = "block";
     document.getElementById("sonuc").innerHTML = `
-        <h3>Komutanın dediği yolda yakıt bitti!</h3>
-        <h2>Oyunu kaybettin!</h2>
-        <button onclick="yenidenBasla()">Yeniden Başla</button>
+        <h3>Komutanı dinledin ve daha uzak olan gezegen için yola devam ettin\n böylece yakıtın azaldı\n şimdi ne yapacaksın?</h3>
+        <button onclick="enYakingezegen()">En Yakın Gezegene İn</button>
+        <button onclick="gemiyizorla()">Gemiyi Zorla</button>
     `;
 }
 
-function sinyaleDogruGit() {
+function sinyalegit2() {
     document.getElementById("sagYolu").style.display = "none";
     document.getElementById("sonuc").style.display = "block";
     document.getElementById("sonuc").innerHTML = `
         <h3>Sinyale doğru ilerliyorsun!</h3>
-        <h2>Keşfetmen gereken gezegen karşında!</h2>
-        <h2>Oyunu kazandın! Tebrikler!</h2>
+        <h2>Aaa burada başka bir keşif ekibi daha var!</h2>
+        <button onclick="onlaraKatil()">Onlara Katıl</button>
+        <button onclick="kendiYolundan()">Kendi Yolundan İlerle</button>
+    `;
+}
+
+function sinyalegit2() {
+    document.getElementById("sonuc").style.display = "none";
+    document.getElementById("Onlara katil").style.display = "block";
+    document.getElementById("Onlara katil").innerHTML = `
+        <h3>Onlarla beraber ilerliyorsun.</h3>
+        <h2>Ama yolundan saptın ve gezegenin yolunu kaybettin. Oyun bitti!</h2>
+        <h2>Kaybettiniz!!!</h2>
         <button onclick="yenidenBasla()">Yeniden Başla</button>
     `;
 }
 
+function sinyalegit2() {
+    document.getElementById("sonuc").style.display = "none";
+    document.getElementById("Kendi yolundan ilerle").style.display = "block";
+    document.getElementById("Kendi yolundan ilerle").innerHTML = `
+        <h3>Kendi yolundan ilerliyorsun.</h3>
+        <h2>Yakıtın bitti.</h2>
+        <h2>Oyunu kaybettiniz!!!</h2>
+        <button onclick="yenidenBasla()">Yeniden Başla</button>
+    `;
+}
+
+
 function yenidenBasla() {
     location.reload();
 }
+

@@ -55,12 +55,12 @@ body {
     margin-top: 20px;
   }
   .img {
-    width: 150px;
+    width: 70px;
     height: auto;
-    position: fixed; /* Resmi sabitle */
-    bottom: 200px;     /* Sayfanın en altından 20px yukarıda */
-    right: 650px;      /* Sağdan 20px içeride */
-    z-index: 999;     /* Her şeyin üstünde olsun */
+    position: fixed;
+    bottom: 20px; /* Alt boşluğu kontrol ediyor */
+    right: 250px; /* Sağdan boşluk: burayı artırınca daha sola kayar, azaltınca daha sağa gider */
+    z-index: 999;
   }
   .meteor {
     display:none;
